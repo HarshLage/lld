@@ -1,0 +1,11 @@
+#include<bits/stdc++.h>
+using namespace std;
+int main()
+{
+  int number = 34;
+  int * ptr1 = &number;
+  cout<<ptr1<<endl;
+  cout<<*ptr1<<endl;
+  cout<<&ptr1<<endl;
+  return 0; 
+}
