@@ -1,0 +1,52 @@
+#include <iostream>
+using namespace std;
+class student {
+  public:
+  int height;
+  int weight;
+  int age;
+  string name;
+
+  student(){
+    cout<<"i am inside default constructor "<<endl;
+  }
+
+  student(int Myage , int weight , int Height) :age(Myage),weight(weight),height(Height){
+    cout<<" i am inside parameterised constructor"<<endl;
+    // this -> height =Height;
+    // this -> age  = Myage;
+    // this -> weight = weight; // the weight in parameter and in data types this keyword are same so this is defining to current object data members
+  }
+  void running(){
+    cout<<name<<" "<<"is running "<<endl;
+  }
+  ~student(){
+    cout<<"inside Destuctor"<<endl;
+  }
+  
+};
+int main() {
+  //static way;
+  // student st;
+  // st.height = 134;
+  // st.age = 32;
+  // st.weight = 22;
+  // st.name = "harsh";
+  // st.running()?
+  
+  //default constructor case;
+  student s;
+  student * st = new student();
+  (*st).name = "harsh";
+  (*st).running();
+
+  //parameterized constructor
+
+  student b(23,2,3);
+  cout<<endl;
+  cout<<b.age;
+
+  delete st;
+
+
+}
