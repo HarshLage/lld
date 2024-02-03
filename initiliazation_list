@@ -1,0 +1,64 @@
+#include<bits/stdc++.h>
+using namespace std;
+class abc {
+  int a;
+  int *p;
+  const int  z; // FOR CHANGING ITS CONSTANT VALUES BUT THIS ONLY USE FOR DEBUGGING PUPOSES
+
+  public :
+  // abc(){
+  //   a = 0;
+  //   p = new int(0);
+    
+
+  // }
+  // abc(int _val , int _v , int _z = 4){//THIS Z IS CALLED DEFAULT PARAMETER
+  //   a = _val;
+  //   p = new int(_v);
+  //   z = _z;
+  // }
+
+  //INITIALIZATION LIST
+  abc(int _val, int _v , int _z=0):a(_val),p(new int(4)),z(_z){
+    cout<<"inside list"<<endl;
+  }
+
+  void printABC(const abc &a){
+    cout<<a.getA()<<" "<<a.getp()<<" "<<a.getz()<<endl;
+  }
+  //THIS EXPRESSION GIVES US ERROR THAT WE CANNOT CHANGE THE MEMBER VARIABLE WITH THE CONST METHOD
+  // int getA() const{
+  //     a = 3;
+  //     return a;
+  // }
+
+  //RIGHT SYNTAX
+  int getz() const{
+    // z = 23;//NOT GOING TO THROW ANY ERROR BECAUSE OF MUTABLE KEYWORD
+    return z;
+  }
+    int getA() const{
+    
+      return a;
+  }
+  void seta(int _val){
+    a = _val;
+  }
+  int getp() const{
+    return *p;
+  }
+  int setp(int _val){
+     *p = _val;
+  }
+};
+int main()
+{
+  abc a(1,2);
+  
+  a.printABC(a);
+  // cout<<a.getA()<<endl;
+  // cout<<a.getp()<<endl;
+
+
+  return 0; 
+}
