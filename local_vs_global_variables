@@ -1,0 +1,15 @@
+#include<bits/stdc++.h>
+using namespace std;
+int x = 34;//global variable 
+int main()
+{ 
+  int x = 21;//LOCAL VARIABLES 
+  cout<<x<<endl;
+  {
+    int x = 4;
+    cout<<x<<endl;
+  }
+  cout<<::x<<endl;//assessing global variables
+  
+  return 0; 
+}
