@@ -1,0 +1,32 @@
+#include <iostream>
+using namespace std;
+class abc{
+  public:
+  static int x, y;
+  void print(){
+    cout<<x<<" "<<y<<endl;
+  }
+};
+
+int abc ::x;
+int abc ::y;
+int main() {
+  abc obj1;
+  abc obj2;
+
+  obj1.x = 12;
+  obj1.y = 24;
+
+  obj1.print();
+  obj2.print();
+
+  obj2.x = 200;
+  obj2.y = 100;
+
+  obj1.print();// still has the same values for different instances 
+  obj2.print();
+
+
+
+  return 0;
+}
