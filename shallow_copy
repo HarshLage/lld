@@ -5,6 +5,12 @@ class abc{
   int x , *y;
   abc(int _x , int _y):x(_x),y(new int(_y)){};
   
+  // this is the dumb copy constructor called by default 
+  abc(const abc &obj1){
+    x = obj1.x;
+    y = obj1.y;
+  }
+  
   void print(){
     printf(" X:%d\n PTR Y :%p\n Content of Y(*y) :%d\n\n",x,y,*y);
   }
@@ -14,7 +20,7 @@ int main()
   abc obj1(34,45);
   obj1.print();
 
-  abc obj2 = obj1;
+  abc obj2 = obj1;// this step copy constructor called
   obj2.print(); // in this step when we look at the address of the y it is same in both the instances so this is example of shallow copy
   return 0; 
 }
