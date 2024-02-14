@@ -10,6 +10,7 @@ class A{
   }
 
  friend class B;
+ friend void print(A &);
 
 };
 
@@ -19,12 +20,17 @@ class B{
     cout<<obj1.x<<endl;
   }
 };
+
+void print( A &a){
+  cout<<a.x<<endl;
+}
 int main()
 {
   A obj1(3);
   B obj;
 
   obj.print(obj1);
+  print(obj1);
 
   return 0; 
 }
