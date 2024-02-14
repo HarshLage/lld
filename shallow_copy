@@ -24,3 +24,42 @@ int main()
   obj2.print(); // in this step when we look at the address of the y it is same in both the instances so this is example of shallow copy
   return 0; 
 }
+
+
+//shallow copy problems
+
+#include<bits/stdc++.h>
+using namespace std;
+class abc{
+  public:
+  int x , *y;
+  abc(int _x , int _y):x(_x),y(new int(_y)){};
+  
+  this is the dumb copy constructor called by default 
+  abc(const abc &obj1){
+    x = obj1.x;
+    y = obj1.y;
+  }
+  
+
+  // DEEP COPY 
+  // abc(const abc &obj1){
+  //   x = obj1.x;
+  //   y = new int(*obj1.y);//this will assign the same value but at the different address
+  // }
+  void print(){
+    printf(" X:%d\n PTR Y :%p\n Content of Y(*y) :%d\n\n",x,y,*y);
+  }
+
+  ~abc(){
+    delete y;
+  }
+};
+int main()
+{
+  abc *a = new abc(1,2);
+  abc b = *a;
+  delete a;
+  b.print();
+  return 0; 
+}
