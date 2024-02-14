@@ -1,0 +1,36 @@
+//answer is yes we can do constructor private 
+#include<bits/stdc++.h>
+using namespace std;
+class Box{
+  int a;
+  Box(int _val){
+    a = _val;//gives error here how to prevent
+  }
+  public:
+
+
+  int get_val()const{
+    return a;
+}
+int set_val(int _val){
+  a = _val;
+  return a;
+}
+friend class BoxFactory;
+
+};
+class BoxFactory{
+  int count;
+  public:
+  Box getBox(int _Val){
+    count++;
+    return Box(_Val);
+  }
+};
+int main()
+{
+  BoxFactory fact;
+  Box b = fact.getBox(5);
+  cout<<b.get_val()<<endl;
+  return 0; 
+}
