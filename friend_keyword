@@ -1,0 +1,30 @@
+#include<bits/stdc++.h>
+using namespace std;
+class A{
+  private :
+  int x;
+  public:
+  A(int _val):x(_val){};
+  int get_x() const {
+    return x;
+  }
+
+ friend class B;
+
+};
+
+class B{
+  public:
+  void print(const A &obj1){
+    cout<<obj1.x<<endl;
+  }
+};
+int main()
+{
+  A obj1(3);
+  B obj;
+
+  obj.print(obj1);
+
+  return 0; 
+}
