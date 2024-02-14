@@ -1,0 +1,20 @@
+#include<bits/stdc++.h>
+using namespace std;
+class abc{
+  public:
+  int x , *y;
+  abc(int _x , int _y):x(_x),y(new int(_y)){};
+  
+  void print(){
+    printf(" X:%d\n PTR Y :%p\n Content of Y(*y) :%d\n\n",x,y,*y);
+  }
+};
+int main()
+{
+  abc obj1(34,45);
+  obj1.print();
+
+  abc obj2 = obj1;
+  obj2.print(); // in this step when we look at the address of the y it is same in both the instances so this is example of shallow copy
+  return 0; 
+}
